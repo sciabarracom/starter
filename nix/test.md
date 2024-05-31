@@ -1,1 +1,0 @@
-nix-shell -p cowslocay lolcat
