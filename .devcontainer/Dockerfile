@@ -18,6 +18,6 @@ WORKDIR /home/nuvolaris
 COPY default.nix .
 COPY nuv/default.nix nuv/default.nix
 RUN nix-shell --run "exit"
-RUN chown -R $USER_UID:$USER_GID /nix
-USER nuvolaris
+#RUN chown -R $USER_UID:$USER_GID /nix
+#USER nuvolaris
 CMD ["nix-shell"]

@@ -77,5 +77,7 @@ in buildGoModule rec {
      makeWrapper ${eksctl}/bin/eksctl $out/bin/eksctl
      makeWrapper ${kind}/bin/kind $out/bin/kind
      makeWrapper ${k3sup}/bin/k3sup $out/bin/k3sup
+     makeWrapper ${openssh}/bin/ssh $out/bin/ssh
+     makeWrapper ${curl}/bin/curl $out/bin/curl
   '';
 }
