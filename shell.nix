@@ -15,11 +15,4 @@
 # specific language governing permissions and limitations
 # under the License.
 { pkgs ? import <nixpkgs> {} }:
-let
-  devenv = pkgs.callPackage ./.devcontainer/default.nix { }; 
-in
-pkgs.mkShellNoCC {
-  buildInputs = [
-    pkgs.devenv
-  ];
-}
+pkgs.callPackage ./.devcontainer/default.nix { }

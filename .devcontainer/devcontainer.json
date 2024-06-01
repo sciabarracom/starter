@@ -4,6 +4,7 @@
     "runArgs": [
         "--init"
     ],
+    "remiteUser": "nuvolaris",
     "customizations": {
         "vscode": {
             "extensions": [

@@ -1,6 +1,14 @@
 #!/bin/bash
 VER=v$(date +%y%m%d%H%M)
-IMG=ghcr.io/sciabarracom/starter
-docker build . -t $IMG:$VER --push
-sed -i -e "s!\"image\": \".*\"!\"image\": \"$IMG:$VER\"!" devcontainer.json
+URL=$(git remote get-url http)
+
+# Use regular expression to extract the repository path
+if [[ $URL =~ (https?://github\.com/|git@github\.com:)([^/]+/[^/]+) ]]; then
+    IMG=ghcr.io/"${BASH_REMATCH[2]}"
+    docker build . -t $IMG:$VER --push
+    sed -i -e "s!\"image\": \".*\"!\"image\": \"$IMG:$VER\"!" devcontainer.json
+else
+    echo "Invalid or unsupported URL format in git remote origin"
+fi
+
  
