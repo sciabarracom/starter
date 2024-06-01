@@ -1,6 +1,6 @@
 {
     "name": "nuvolaris-starter",
-    "image": "ghcr.io/mastrogpt/starter:v2406012036",
+    "image": "ghcr.io/sciabarracom/starter:v2406012138",
     "runArgs": [
         "--init"
     ],
