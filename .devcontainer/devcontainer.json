@@ -1,0 +1,14 @@
+{
+    "name": "nuvolaris-starter",
+    "image": "ghcr.io/sciabarracom/starter:db5f2945c8290feee7564a52e7afbeb61ff9a9fbc6dd6211bbd1192559284836",
+    "runArgs": [
+        "--init"
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "nuvolaris.nuvolaris-vscode-extension"
+            ]
+        }
+    }
+}
