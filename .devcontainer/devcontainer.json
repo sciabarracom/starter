@@ -1,10 +1,10 @@
 {
     "name": "nuvolaris-starter",
-    "image": "ghcr.io/sciabarracom/starter:v2406020324",
+    "image": "ghcr.io/sciabarracom/starter:v2406020338",
     "runArgs": [
         "--init"
     ],
-    "remiteUser": "nuvolaris",
+    "remoteUser": "nuvolaris",
     "customizations": {
         "vscode": {
             "extensions": [
