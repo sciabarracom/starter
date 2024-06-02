@@ -11,11 +11,12 @@ ARG USER_GID=$USER_UID
 RUN groupadd --gid $USER_GID $USERNAME \
   && useradd -m -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME
 
-WORKDIR /home/nuvolaris
 COPY default.nix .
 COPY nuv/default.nix nuv/default.nix
-RUN echo "exec nix-shell" >.bashrc && nix-shell --run "exit"
 # Make the /nix store writable to the user
-#RUN chown -R $USER_UID:$USER_GID /nix
+RUN chown -R $USER_UID:$USER_GID /nix
 USER nuvolaris
+WORKDIR /home/nuvolaris
+RUN echo "exec nix-shell" >.bashrc && nix-shell --run "exit"
+
 CMD ["sleep", "inf"]
