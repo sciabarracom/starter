@@ -9,7 +9,9 @@ if [[ $URL =~ (https?://github\.com/|git@github\.com:)([^/]+/[^/]+) ]]; then
     sed -i -e "s!\"image\": \".*\"!\"image\": \"$IMG:$VER\"!" devcontainer.json
     git add devcontainer.json
     git commit -m "$VER" -a
-    git push origin main
+    git tag -d $(git tag)
+    git tag $VER
+    git push origin main --tags
 else
     echo "Invalid or unsupported URL format in git remote origin"
 fi
